@@ -18,9 +18,6 @@
 
 	<bean id="configuration" class="com.search.lucene.Configuration">
 		<property name="idxPath" value="lucene_index" />
-		<property name="cachePath" value="lucene_cache/" />
-		<property name="startDate" value="2014-04-01 00:00:00" />
-		<property name="endDate" value="2014-04-01 23:59:59" />
 		<property name="sourceTypes">
 			<map key-type="java.lang.Integer" value-type="java.lang.String">
 				<entry key="0" value="资讯"></entry>
@@ -28,8 +25,7 @@
 				<entry key="2" value="贴吧"></entry>
 				<entry key="3" value="博客"></entry>
 				<entry key="4" value="微博"></entry>
-				<entry key="5" value="百度知道"></entry>
-				<entry key="6" value="视频"></entry>
+				<entry key="5" value="视频"></entry>
 			</map>
 		</property>
 	</bean>

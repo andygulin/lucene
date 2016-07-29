@@ -3,7 +3,7 @@ package com.search.lucene.bean;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Data implements Serializable {
 
@@ -11,22 +11,21 @@ public class Data implements Serializable {
 
 	private Integer id;
 	private String title;
-	private String formatContent;
+	private String content;
 	private Integer sourceType;
-	private Date releaseDate;
+	private Date createdAt;
 
 	public Data() {
 		super();
 	}
 
-	public Data(Integer id, String title, String formatContent,
-			Integer sourceType, Date releaseDate) {
+	public Data(Integer id, String title, String content, Integer sourceType, Date createdAt) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.formatContent = formatContent;
+		this.content = content;
 		this.sourceType = sourceType;
-		this.releaseDate = releaseDate;
+		this.createdAt = createdAt;
 	}
 
 	public Integer getId() {
@@ -45,12 +44,12 @@ public class Data implements Serializable {
 		this.title = title;
 	}
 
-	public String getFormatContent() {
-		return formatContent;
+	public String getContent() {
+		return content;
 	}
 
-	public void setFormatContent(String formatContent) {
-		this.formatContent = formatContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Integer getSourceType() {
@@ -61,17 +60,16 @@ public class Data implements Serializable {
 		this.sourceType = sourceType;
 	}
 
-	public Date getReleaseDate() {
-		return releaseDate;
+	public Date getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	@Override
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-
 }

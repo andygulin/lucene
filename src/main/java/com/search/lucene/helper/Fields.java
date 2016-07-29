@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.text.ParseException;
 import java.util.Date;
 
-import org.apache.commons.lang3.time.DateUtils;
+import org.apache.commons.lang.time.DateUtils;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Field.Index;
 import org.apache.lucene.document.Field.Store;

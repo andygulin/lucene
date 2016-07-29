@@ -3,14 +3,14 @@ package com.search.lucene.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class SearchParam {
 
 	private Integer id;
 	private String title = "";
-	private String formatContent = "";
+	private String content = "";
 	private Integer sourceType;
 	private String startDate = "";
 	private String endDate = "";
@@ -31,12 +31,12 @@ public class SearchParam {
 		this.title = title;
 	}
 
-	public String getFormatContent() {
-		return formatContent;
+	public String getContent() {
+		return content;
 	}
 
-	public void setFormatContent(String formatContent) {
-		this.formatContent = formatContent;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public Integer getSourceType() {
@@ -64,10 +64,8 @@ public class SearchParam {
 	}
 
 	public boolean isEmpty() {
-		if (this.id == null && this.title.length() == 0
-				&& this.formatContent.length() == 0
-				&& this.startDate.length() == 0 && this.endDate.length() == 0
-				&& this.sourceType == null) {
+		if (this.id == null && this.title.length() == 0 && this.content.length() == 0 && this.startDate.length() == 0
+				&& this.endDate.length() == 0 && this.sourceType == null) {
 			return true;
 		}
 		return false;
@@ -87,8 +85,8 @@ public class SearchParam {
 		if (this.title != null) {
 			url.add("title=" + this.title);
 		}
-		if (this.formatContent != null) {
-			url.add("formatContent=" + this.formatContent);
+		if (this.content != null) {
+			url.add("content=" + this.content);
 		}
 		if (this.sourceType != null) {
 			url.add("sourceType=" + this.sourceType);

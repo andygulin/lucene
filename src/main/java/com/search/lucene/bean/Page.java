@@ -1,6 +1,6 @@
 package com.search.lucene.bean;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Page {
 
@@ -56,33 +56,27 @@ public class Page {
 		int begin = Math.max(1, this.pageNo - this.showNum / 2);
 		int end = Math.min(begin + (this.showNum - 1), totalPages);
 		final int INDEX_NOT_FOUND = -1;
-		this.url = this.url.endsWith("?") ? this.url.substring(0,
-				this.url.length() - 1) : this.url;
+		this.url = this.url.endsWith("?") ? this.url.substring(0, this.url.length() - 1) : this.url;
 		String linkChar = this.url.indexOf("?") != INDEX_NOT_FOUND ? "&" : "?";
 		this.url += linkChar;
 		page.append("<div class=\"pagination pagination-centered\"><ul>");
 		if (this.pageNo > 1) {
 			page.append("<li><a href=\"" + this.url + "page=1\">首页</a></li>");
-			page.append("<li><a href=\"" + this.url + "page="
-					+ (this.pageNo - 1) + "\">上一页</a></li>");
+			page.append("<li><a href=\"" + this.url + "page=" + (this.pageNo - 1) + "\">上一页</a></li>");
 		} else {
 			page.append("<li class=\"disabled\"><a href=\"#\">首页</a></li>");
 			page.append("<li class=\"disabled\"><a href=\"#\">上一页</a></li>");
 		}
 		for (int i = begin; i <= end; i++) {
 			if (i == this.pageNo) {
-				page.append("<li class=\"active\"><a href=\"" + this.url
-						+ "page=" + i + "\">" + i + "</a></li>");
+				page.append("<li class=\"active\"><a href=\"" + this.url + "page=" + i + "\">" + i + "</a></li>");
 			} else {
-				page.append("<li><a href=\"" + this.url + "page=" + i + "\">"
-						+ i + "</a></li>");
+				page.append("<li><a href=\"" + this.url + "page=" + i + "\">" + i + "</a></li>");
 			}
 		}
 		if (this.pageNo < totalPages) {
-			page.append("<li><a href=\"" + this.url + "page="
-					+ (this.pageNo + 1) + "\">下一页</a></li>");
-			page.append("<li><a href=\"" + this.url + "page=" + totalPages
-					+ "\">末页</a></li>");
+			page.append("<li><a href=\"" + this.url + "page=" + (this.pageNo + 1) + "\">下一页</a></li>");
+			page.append("<li><a href=\"" + this.url + "page=" + totalPages + "\">末页</a></li>");
 		} else {
 			page.append("<li class=\"disabled\"><a href=\"#\">下一页</a></li>");
 			page.append("<li class=\"disabled\"><a href=\"#\">末页</a></li>");
@@ -95,5 +89,4 @@ public class Page {
 	public String toString() {
 		return ToStringBuilder.reflectionToString(this);
 	}
-
 }

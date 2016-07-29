@@ -19,7 +19,7 @@
 						<td>标题：</td><td colspan="6"><input type="text" name="title" class="input-xxlarge search-query" value="${param.title }" /></td>
 					</tr>
 					<tr>
-						<td>正文：</td><td colspan="6"><input type="text" name="formatContent" class="input-xxlarge search-query" value="${param.formatContent }" /></td>
+						<td>正文：</td><td colspan="6"><input type="text" name="content" class="input-xxlarge search-query" value="${param.content }" /></td>
 					</tr>
 					<tr>
 						<td>类别：</td><td colspan="6">
@@ -60,7 +60,7 @@
 						<c:if test="${fn:length(data.title)<30 }">${data.title }</c:if>
 						</td>
 						<td>${sourceTypes[data.sourceType] }</td>
-						<td><fmt:formatDate value="${data.release_date }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+						<td><fmt:formatDate value="${data.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 					</tr>
 					</c:forEach>
 				</tbody>
