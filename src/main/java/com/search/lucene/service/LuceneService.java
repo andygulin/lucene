@@ -5,7 +5,7 @@ import com.search.lucene.bean.SearchResult;
 
 public interface LuceneService {
 
-	void index();
+    void index();
 
-	SearchResult search(SearchParam param, int pageIndex, int pageSize);
+    SearchResult search(SearchParam param, int pageIndex, int pageSize);
 }
